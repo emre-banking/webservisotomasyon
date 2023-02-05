@@ -14,8 +14,8 @@ public class TrelloCardPage {
 
     public String getBoardId(String boardName) throws Exception {
         Response response = given()
-                .queryParam("key", "c8232ef4e9d5c5e9641b4481138c7ea9")
-                .queryParam("token", "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554")
+                .queryParam("key", "key")
+                .queryParam("token", "token")
                 .when()
                 .get("https://api.trello.com/1/members/me/boards");
 
@@ -31,8 +31,8 @@ public class TrelloCardPage {
     }
     public String getListId(String boardId, String listName) throws Exception {
         Response response = given()
-                .queryParam("key", "c8232ef4e9d5c5e9641b4481138c7ea9")
-                .queryParam("token", "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554")
+                .queryParam("key", "key")
+                .queryParam("token", "token")
                 .when()
                 .get("https://api.trello.com/1/boards/" + boardId + "/lists");
 
@@ -48,8 +48,8 @@ public class TrelloCardPage {
     }
     public String getCardId(String boardId, String cardName) throws Exception {
         Response response = given()
-                .queryParam("key", "c8232ef4e9d5c5e9641b4481138c7ea9")
-                .queryParam("token", "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554")
+                .queryParam("key", "key")
+                .queryParam("token", "token")
                 .when()
                 .get("https://api.trello.com/1/boards/" + boardId + "/cards");
 
@@ -66,8 +66,8 @@ public class TrelloCardPage {
     public void createBoard(String boardName) throws Exception {
 
         //Define variables
-        String API_KEY = "c8232ef4e9d5c5e9641b4481138c7ea9";
-        String TOKEN = "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554";
+        String API_KEY = "";
+        String TOKEN = "";
         String BASE_URL = "https://api.trello.com/1/boards/";
 
         //Add query parameters
@@ -84,8 +84,8 @@ public class TrelloCardPage {
 
         // Base URL for Trello API
         RestAssured.baseURI = "https://api.trello.com/1/";
-        String API_KEY = "c8232ef4e9d5c5e9641b4481138c7ea9";
-        String TOKEN = "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554";
+        String API_KEY = "";
+        String TOKEN = "";
         var listID = getListId(getBoardId("Test Board"),"To Do");
 
         //Create first card
@@ -118,8 +118,8 @@ public class TrelloCardPage {
         RestAssured.baseURI = "https://api.trello.com/1/cards/";
         RestAssured.basePath = cardId1;
 
-        String API_KEY = "c8232ef4e9d5c5e9641b4481138c7ea9";
-        String TOKEN = "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554";
+        String API_KEY = "";
+        String TOKEN = "";
 
         RestAssured.given()
                 .queryParam("key", API_KEY)
@@ -133,8 +133,8 @@ public class TrelloCardPage {
     }
     public void deleteCard(String boardName, String cardName) throws Exception {
 
-        String API_KEY = "c8232ef4e9d5c5e9641b4481138c7ea9";
-        String TOKEN = "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554";
+        String API_KEY = "";
+        String TOKEN = "";
 
         var boardId = getBoardId(boardName);
         var cardId= getCardId(boardId, cardName);
@@ -148,8 +148,8 @@ public class TrelloCardPage {
                 .statusCode(200);
     }
     public void deleteBoard(String boardName) throws Exception {
-        String API_KEY = "c8232ef4e9d5c5e9641b4481138c7ea9";
-        String TOKEN = "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554";
+        String API_KEY = "";
+        String TOKEN = "";
         var id = getBoardId(boardName);
         String BASE_URL = "https://api.trello.com/1/boards/" + id;
 
