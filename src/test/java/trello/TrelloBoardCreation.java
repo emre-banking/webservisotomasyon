@@ -13,8 +13,8 @@ public class TrelloBoardCreation {
 
         // Define the parameters for creating the Trello board
         request.queryParam("name", "Test Board");
-        request.queryParam("key", "c8232ef4e9d5c5e9641b4481138c7ea9");
-        request.queryParam("token", "986c1909807490857490f56cf697fb449d2e320983e78eee4ce111e86e816554");
+        request.queryParam("key", "key");
+        request.queryParam("token", "token");
 
         // Send the POST request to the Trello API endpoint for creating boards
         Response response = request.post("boards/");
