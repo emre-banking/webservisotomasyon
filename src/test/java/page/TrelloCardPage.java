@@ -44,7 +44,7 @@ public class TrelloCardPage {
             }
         }
 
-        throw new Exception("Card not found");
+        throw new Exception("List not found");
     }
     public String getCardId(String boardId, String cardName) throws Exception {
         Response response = given()
